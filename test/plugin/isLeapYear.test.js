@@ -16,3 +16,8 @@ it('IsLeapYear', () => {
   expect(dayjs('20000101').isLeapYear()).toBe(true)
   expect(dayjs('2100-01-01').isLeapYear()).toBe(false)
 })
+
+it('handles century years using the Gregorian 400-year rule', () => {
+  expect(dayjs('1900-01-01').isLeapYear()).toBe(false)
+  expect(dayjs('2400-01-01').isLeapYear()).toBe(true)
+})
